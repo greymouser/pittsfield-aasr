@@ -50,7 +50,91 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-        // Contact form handling\n    const contactForm = document.querySelector('.contact-form');\n    if (contactForm) {\n        contactForm.addEventListener('submit', function(e) {\n            e.preventDefault();\n            \n            const submitButton = contactForm.querySelector('button[type=\"submit\"]');\n            const originalButtonText = submitButton.textContent;\n            \n            // Show loading state\n            submitButton.textContent = 'Sending...';\n            submitButton.disabled = true;\n            \n            // Get form data\n            const formData = new FormData(contactForm);\n            \n            // Send the form data\n            fetch('contact-handler.php', {\n                method: 'POST',\n                body: formData\n            })\n            .then(response => response.json())\n            .then(data => {\n                if (data.success) {\n                    showFormSuccess(data.message);\n                } else {\n                    showFormError(data.message);\n                }\n            })\n            .catch(error => {\n                console.error('Error:', error);\n                showFormError('Sorry, there was an error sending your message. Please try again later.');\n            })\n            .finally(() => {\n                // Reset button state\n                submitButton.textContent = originalButtonText;\n                submitButton.disabled = false;\n            });\n        });\n    }\n\n    function showFormSuccess(message = 'Thank you for contacting the Valley of Pittsfield. We will respond to your inquiry within 2-3 business days.') {\n        const formCard = document.querySelector('.contact-form-card');\n        if (formCard) {\n            const successMessage = document.createElement('div');\n            successMessage.className = 'form-success';\n            successMessage.innerHTML = `\n                <div style=\"text-align: center; padding: 2rem;\">\n                    <h3 style=\"color: var(--success); margin-bottom: 1rem;\">✅ Message Sent Successfully!</h3>\n                    <p style=\"margin-bottom: 1.5rem;\">${message}</p>\n                    <button onclick=\"location.reload()\" class=\"btn btn-primary\">Send Another Message</button>\n                </div>\n            `;\n            \n            formCard.innerHTML = '';\n            formCard.appendChild(successMessage);\n        }\n    }\n\n    function showFormError(message) {\n        // Create or update error message\n        let errorDiv = document.querySelector('.form-error');\n        if (!errorDiv) {\n            errorDiv = document.createElement('div');\n            errorDiv.className = 'form-error';\n            errorDiv.style.cssText = `\n                background-color: #fee;\n                border: 1px solid #fcc;\n                color: #c33;\n                padding: 1rem;\n                border-radius: 5px;\n                margin-bottom: 1rem;\n            `;\n            contactForm.insertBefore(errorDiv, contactForm.firstChild);\n        }\n        \n        errorDiv.innerHTML = `<strong>Error:</strong> ${message}`;\n        \n        // Remove error message after 5 seconds\n        setTimeout(() => {\n            if (errorDiv && errorDiv.parentNode) {\n                errorDiv.parentNode.removeChild(errorDiv);\n            }\n        }, 5000);\n    }"
+    // Contact form handling
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            const originalButtonText = submitButton.textContent;
+            
+            // Show loading state
+            submitButton.textContent = 'Sending...';
+            submitButton.disabled = true;
+            
+            // Get form data
+            const formData = new FormData(contactForm);
+            
+            // Send the form data
+            fetch('contact-handler.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    showFormSuccess(data.message);
+                } else {
+                    showFormError(data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                showFormError('Sorry, there was an error sending your message. Please try again later.');
+            })
+            .finally(() => {
+                // Reset button state
+                submitButton.textContent = originalButtonText;
+                submitButton.disabled = false;
+            });
+        });
+    }
+
+    function showFormSuccess(message = 'Thank you for contacting the Valley of Pittsfield. We will respond to your inquiry within 2-3 business days.') {
+        const formCard = document.querySelector('.contact-form-card');
+        if (formCard) {
+            const successMessage = document.createElement('div');
+            successMessage.className = 'form-success';
+            successMessage.innerHTML = `
+                <div style="text-align: center; padding: 2rem;">
+                    <h3 style="color: var(--success); margin-bottom: 1rem;">✅ Message Sent Successfully!</h3>
+                    <p style="margin-bottom: 1.5rem;">${message}</p>
+                    <button onclick="location.reload()" class="btn btn-primary">Send Another Message</button>
+                </div>
+            `;
+            
+            formCard.innerHTML = '';
+            formCard.appendChild(successMessage);
+        }
+    }
+
+    function showFormError(message) {
+        // Create or update error message
+        let errorDiv = document.querySelector('.form-error');
+        if (!errorDiv) {
+            errorDiv = document.createElement('div');
+            errorDiv.className = 'form-error';
+            errorDiv.style.cssText = `
+                background-color: #fee;
+                border: 1px solid #fcc;
+                color: #c33;
+                padding: 1rem;
+                border-radius: 5px;
+                margin-bottom: 1rem;
+            `;
+            contactForm.insertBefore(errorDiv, contactForm.firstChild);
+        }
+        
+        errorDiv.innerHTML = `<strong>Error:</strong> ${message}`;
+        
+        // Remove error message after 5 seconds
+        setTimeout(() => {
+            if (errorDiv && errorDiv.parentNode) {
+                errorDiv.parentNode.removeChild(errorDiv);
+            }
+        }, 5000);
+    }
 
     // Smooth scrolling for anchor links
     const anchorLinks = document.querySelectorAll('a[href^="#"]');

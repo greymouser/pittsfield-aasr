@@ -11,6 +11,12 @@
   --neutral-light: #f5f5f5;       /* Light gray for backgrounds */
   --white: #ffffff;               /* Pure white */
   
+  /* Status Colors */
+  --success: #28a745;             /* Success green */
+  --error: #dc3545;               /* Error red */
+  --warning: #ffc107;             /* Warning yellow */
+  --info: #17a2b8;                /* Info blue */
+  
   /* Calculated Color Variations - These are auto-generated from base colors */
   
   /* Primary Color Variations */
@@ -95,6 +101,12 @@
   --warning: #f57c00;
   --error: #d32f2f;
   --info: var(--primary-500);
+  
+  /* Status Background Colors */
+  --bg-success: color-mix(in srgb, var(--success) 10%, var(--white) 90%);
+  --bg-error: color-mix(in srgb, var(--error) 10%, var(--white) 90%);
+  --bg-warning: color-mix(in srgb, var(--warning) 10%, var(--white) 90%);
+  --bg-info: color-mix(in srgb, var(--info) 10%, var(--white) 90%);
 }
 
 /* Alternative color schemes for easy switching */
