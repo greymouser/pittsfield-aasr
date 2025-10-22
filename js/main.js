@@ -9,6 +9,13 @@ document.addEventListener('DOMContentLoaded', function() {
         hamburger.addEventListener('click', function() {
             navMenu.classList.toggle('active');
             hamburger.classList.toggle('active');
+            
+            // Prevent body scroll when menu is open on mobile
+            if (navMenu.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
         });
 
         // Close mobile menu when clicking on a nav link
@@ -17,6 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
             link.addEventListener('click', function() {
                 navMenu.classList.remove('active');
                 hamburger.classList.remove('active');
+                document.body.style.overflow = '';
             });
         });
 
@@ -28,57 +36,21 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!isClickInsideNav && !isClickOnHamburger && navMenu.classList.contains('active')) {
                 navMenu.classList.remove('active');
                 hamburger.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+        
+        // Close menu on window resize to desktop size
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+                document.body.style.overflow = '';
             }
         });
     }
 
-    // Contact form handling
-    const contactForm = document.querySelector('.contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(contactForm);
-            const name = formData.get('name');
-            const email = formData.get('email');
-            const subject = formData.get('subject');
-            const message = formData.get('message');
-            
-            // Basic validation
-            if (!name || !email || !subject || !message) {
-                alert('Please fill in all required fields.');
-                return;
-            }
-            
-            // Email validation
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-                alert('Please enter a valid email address.');
-                return;
-            }
-            
-            // In a real implementation, you would send this data to a server
-            // For now, we'll just show a success message
-            showFormSuccess();
-        });
-    }
-
-    function showFormSuccess() {
-        const formCard = document.querySelector('.contact-form-card');
-        if (formCard) {
-            const successMessage = document.createElement('div');
-            successMessage.className = 'form-success';
-            successMessage.innerHTML = `
-                <h3 style="color: var(--success); margin-bottom: 1rem;">Message Sent Successfully!</h3>
-                <p>Thank you for contacting the Valley of Pittsfield. We will respond to your inquiry within 2-3 business days.</p>
-                <button onclick="location.reload()" class="btn btn-primary" style="margin-top: 1rem;">Send Another Message</button>
-            `;
-            
-            formCard.innerHTML = '';
-            formCard.appendChild(successMessage);
-        }
-    }
+        // Contact form handling\n    const contactForm = document.querySelector('.contact-form');\n    if (contactForm) {\n        contactForm.addEventListener('submit', function(e) {\n            e.preventDefault();\n            \n            const submitButton = contactForm.querySelector('button[type=\"submit\"]');\n            const originalButtonText = submitButton.textContent;\n            \n            // Show loading state\n            submitButton.textContent = 'Sending...';\n            submitButton.disabled = true;\n            \n            // Get form data\n            const formData = new FormData(contactForm);\n            \n            // Send the form data\n            fetch('contact-handler.php', {\n                method: 'POST',\n                body: formData\n            })\n            .then(response => response.json())\n            .then(data => {\n                if (data.success) {\n                    showFormSuccess(data.message);\n                } else {\n                    showFormError(data.message);\n                }\n            })\n            .catch(error => {\n                console.error('Error:', error);\n                showFormError('Sorry, there was an error sending your message. Please try again later.');\n            })\n            .finally(() => {\n                // Reset button state\n                submitButton.textContent = originalButtonText;\n                submitButton.disabled = false;\n            });\n        });\n    }\n\n    function showFormSuccess(message = 'Thank you for contacting the Valley of Pittsfield. We will respond to your inquiry within 2-3 business days.') {\n        const formCard = document.querySelector('.contact-form-card');\n        if (formCard) {\n            const successMessage = document.createElement('div');\n            successMessage.className = 'form-success';\n            successMessage.innerHTML = `\n                <div style=\"text-align: center; padding: 2rem;\">\n                    <h3 style=\"color: var(--success); margin-bottom: 1rem;\">✅ Message Sent Successfully!</h3>\n                    <p style=\"margin-bottom: 1.5rem;\">${message}</p>\n                    <button onclick=\"location.reload()\" class=\"btn btn-primary\">Send Another Message</button>\n                </div>\n            `;\n            \n            formCard.innerHTML = '';\n            formCard.appendChild(successMessage);\n        }\n    }\n\n    function showFormError(message) {\n        // Create or update error message\n        let errorDiv = document.querySelector('.form-error');\n        if (!errorDiv) {\n            errorDiv = document.createElement('div');\n            errorDiv.className = 'form-error';\n            errorDiv.style.cssText = `\n                background-color: #fee;\n                border: 1px solid #fcc;\n                color: #c33;\n                padding: 1rem;\n                border-radius: 5px;\n                margin-bottom: 1rem;\n            `;\n            contactForm.insertBefore(errorDiv, contactForm.firstChild);\n        }\n        \n        errorDiv.innerHTML = `<strong>Error:</strong> ${message}`;\n        \n        // Remove error message after 5 seconds\n        setTimeout(() => {\n            if (errorDiv && errorDiv.parentNode) {\n                errorDiv.parentNode.removeChild(errorDiv);\n            }\n        }, 5000);\n    }"
 
     // Smooth scrolling for anchor links
     const anchorLinks = document.querySelectorAll('a[href^="#"]');
@@ -204,6 +176,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (navMenu && navMenu.classList.contains('active')) {
                 navMenu.classList.remove('active');
                 hamburger.classList.remove('active');
+                document.body.style.overflow = '';
             }
         }
     });
