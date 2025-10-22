@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400">
+  <defs>
+    <style>
+      .cls-1 { fill: #2c2c2c; }
+      .cls-2 { fill: #1a237e; }
+      .cls-3 { fill: #ffd700; }
+      .cls-4 { fill: #8b0000; }
+      .cls-5 { fill: #666666; }
+    </style>
+  </defs>
+  
+  <!-- Chamber background -->
+  <rect width="600" height="400" class="cls-1"/>
+  
+  <!-- Floor pattern -->
+  <g>
+    <!-- Checkered floor -->
+    <rect x="0" y="300" width="50" height="50" fill="white"/>
+    <rect x="50" y="350" width="50" height="50" fill="white"/>
+    <rect x="100" y="300" width="50" height="50" fill="white"/>
+    <rect x="150" y="350" width="50" height="50" fill="white"/>
+    <rect x="200" y="300" width="50" height="50" fill="white"/>
+    <rect x="250" y="350" width="50" height="50" fill="white"/>
+    <rect x="300" y="300" width="50" height="50" fill="white"/>
+    <rect x="350" y="350" width="50" height="50" fill="white"/>
+    <rect x="400" y="300" width="50" height="50" fill="white"/>
+    <rect x="450" y="350" width="50" height="50" fill="white"/>
+    <rect x="500" y="300" width="50" height="50" fill="white"/>
+    <rect x="550" y="350" width="50" height="50" fill="white"/>
+  </g>
+  
+  <!-- Altar in center -->
+  <g transform="translate(250,200)">
+    <!-- Altar base -->
+    <rect x="0" y="50" width="100" height="60" class="cls-5"/>
+    
+    <!-- Altar top -->
+    <rect x="-10" y="45" width="120" height="10" class="cls-3"/>
+    
+    <!-- Sacred book -->
+    <rect x="20" y="35" width="60" height="15" class="cls-2"/>
+    <rect x="25" y="30" width="50" height="3" class="cls-3"/>
+    
+    <!-- Compass and Square -->
+    <g transform="translate(50,40)">
+      <!-- Compass -->
+      <line x1="-10" y1="5" x2="0" y2="-5" stroke="#ffd700" stroke-width="2"/>
+      <line x1="10" y1="5" x2="0" y2="-5" stroke="#ffd700" stroke-width="2"/>
+      
+      <!-- Square -->
+      <rect x="-8" y="0" width="16" height="2" class="cls-3"/>
+      <rect x="-8" y="0" width="2" height="8" class="cls-3"/>
+    </g>
+  </g>
+  
+  <!-- Pillars -->
+  <g transform="translate(100,50)">
+    <!-- Left pillar -->
+    <rect x="0" y="0" width="30" height="200" class="cls-5"/>
+    <rect x="-5" y="-10" width="40" height="15" class="cls-3"/>
+    <rect x="-5" y="200" width="40" height="15" class="cls-3"/>
+    <text x="15" y="110" text-anchor="middle" font-family="serif" font-size="16" fill="white">J</text>
+  </g>
+  
+  <g transform="translate(470,50)">
+    <!-- Right pillar -->
+    <rect x="0" y="0" width="30" height="200" class="cls-5"/>
+    <rect x="-5" y="-10" width="40" height="15" class="cls-3"/>
+    <rect x="-5" y="200" width="40" height="15" class="cls-3"/>
+    <text x="15" y="110" text-anchor="middle" font-family="serif" font-size="16" fill="white">B</text>
+  </g>
+  
+  <!-- East wall with throne -->
+  <g transform="translate(200,50)">
+    <!-- Throne -->
+    <rect x="50" y="0" width="100" height="80" class="cls-2"/>
+    <rect x="40" y="70" width="120" height="10" class="cls-3"/>
+    
+    <!-- All-Seeing Eye above throne -->
+    <g transform="translate(100,30)">
+      <polygon points="-20,0 0,-20 20,0" stroke="#ffd700" stroke-width="2" fill="none"/>
+      <circle cx="0" cy="-5" r="8" class="cls-3"/>
+      <circle cx="0" cy="-5" r="3" class="cls-1"/>
+    </g>
+  </g>
+  
+  <!-- Degree symbols on walls -->
+  <g transform="translate(50,100)">
+    <text x="0" y="0" font-family="serif" font-size="24" class="cls-3">4°</text>
+  </g>
+  
+  <g transform="translate(520,100)">
+    <text x="0" y="0" font-family="serif" font-size="24" class="cls-3">14°</text>
+  </g>
+  
+  <!-- Candles/lighting -->
+  <g transform="translate(150,120)">
+    <rect x="0" y="0" width="4" height="20" class="cls-3"/>
+    <ellipse cx="2" cy="-2" rx="3" ry="5" fill="#ffff00" opacity="0.7"/>
+  </g>
+  
+  <g transform="translate(446,120)">
+    <rect x="0" y="0" width="4" height="20" class="cls-3"/>
+    <ellipse cx="2" cy="-2" rx="3" ry="5" fill="#ffff00" opacity="0.7"/>
+  </g>
+  
+  <!-- Chamber title -->
+  <text x="300" y="30" text-anchor="middle" font-family="serif" font-size="18" class="cls-3">Scottish Rite Ritual Chamber</text>
+</svg>

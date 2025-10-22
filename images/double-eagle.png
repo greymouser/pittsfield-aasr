@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <style>
+      .cls-1 { fill: #1a237e; stroke: #1a237e; stroke-width: 2; }
+      .cls-2 { fill: #ffd700; }
+      .cls-3 { fill: #8b0000; }
+      .cls-4 { fill: none; stroke: #1a237e; stroke-width: 3; }
+    </style>
+  </defs>
+  
+  <!-- Main Double Eagle -->
+  <g transform="translate(100,100)">
+    <!-- Eagle Body -->
+    <ellipse cx="0" cy="10" rx="20" ry="30" class="cls-1"/>
+    
+    <!-- Left Wing -->
+    <path d="M-20,0 Q-50,-20 -60,-10 Q-50,10 -20,20 Z" class="cls-1"/>
+    
+    <!-- Right Wing -->
+    <path d="M20,0 Q50,-20 60,-10 Q50,10 20,20 Z" class="cls-1"/>
+    
+    <!-- Left Head -->
+    <circle cx="-25" cy="-25" r="12" class="cls-1"/>
+    <polygon points="-35,-25 -40,-20 -30,-20" class="cls-1"/>
+    
+    <!-- Right Head -->
+    <circle cx="25" cy="-25" r="12" class="cls-1"/>
+    <polygon points="35,-25 40,-20 30,-20" class="cls-1"/>
+    
+    <!-- Crown -->
+    <rect x="-10" y="-50" width="20" height="12" class="cls-2"/>
+    <polygon points="-10,-50 0,-60 10,-50" class="cls-2"/>
+    <circle cx="-5" cy="-44" r="2" class="cls-3"/>
+    <circle cx="0" cy="-44" r="2" class="cls-3"/>
+    <circle cx="5" cy="-44" r="2" class="cls-3"/>
+    
+    <!-- Shield on chest -->
+    <path d="M-8,5 L-8,25 L0,35 L8,25 L8,5 Z" class="cls-2"/>
+    <rect x="-6" y="8" width="12" height="3" class="cls-3"/>
+    <rect x="-6" y="13" width="12" height="3" class="cls-3"/>
+    <rect x="-6" y="18" width="12" height="3" class="cls-3"/>
+    
+    <!-- Talons holding ribbon -->
+    <ellipse cx="-15" cy="45" rx="8" ry="4" class="cls-1"/>
+    <ellipse cx="15" cy="45" rx="8" ry="4" class="cls-1"/>
+    
+    <!-- Ribbon with motto -->
+    <rect x="-40" y="50" width="80" height="10" class="cls-2"/>
+    <text x="0" y="58" text-anchor="middle" font-family="serif" font-size="8" class="cls-1">DEUS MEUMQUE JUS</text>
+    
+    <!-- Degree number -->
+    <text x="0" y="75" text-anchor="middle" font-family="serif" font-size="16" font-weight="bold" class="cls-1">32°</text>
+  </g>
+</svg>

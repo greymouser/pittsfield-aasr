@@ -1,0 +1,125 @@
+/* Base Color Palette - Edit these to change the entire site's color scheme */
+:root {
+  /* Primary Colors - Scottish Rite inspired */
+  --primary-base: #1a237e;        /* Deep blue - main brand color */
+  --secondary-base: #8b0000;      /* Dark red - accent color */
+  --tertiary-base: #ffd700;       /* Gold - highlight color */
+  
+  /* Neutral Colors */
+  --neutral-dark: #2c2c2c;        /* Dark gray for text */
+  --neutral-medium: #666666;      /* Medium gray */
+  --neutral-light: #f5f5f5;       /* Light gray for backgrounds */
+  --white: #ffffff;               /* Pure white */
+  
+  /* Calculated Color Variations - These are auto-generated from base colors */
+  
+  /* Primary Color Variations */
+  --primary-50: color-mix(in srgb, var(--primary-base) 10%, var(--white) 90%);
+  --primary-100: color-mix(in srgb, var(--primary-base) 20%, var(--white) 80%);
+  --primary-200: color-mix(in srgb, var(--primary-base) 40%, var(--white) 60%);
+  --primary-300: color-mix(in srgb, var(--primary-base) 60%, var(--white) 40%);
+  --primary-400: color-mix(in srgb, var(--primary-base) 80%, var(--white) 20%);
+  --primary-500: var(--primary-base);
+  --primary-600: color-mix(in srgb, var(--primary-base) 80%, var(--neutral-dark) 20%);
+  --primary-700: color-mix(in srgb, var(--primary-base) 60%, var(--neutral-dark) 40%);
+  --primary-800: color-mix(in srgb, var(--primary-base) 40%, var(--neutral-dark) 60%);
+  --primary-900: color-mix(in srgb, var(--primary-base) 20%, var(--neutral-dark) 80%);
+  
+  /* Secondary Color Variations */
+  --secondary-50: color-mix(in srgb, var(--secondary-base) 10%, var(--white) 90%);
+  --secondary-100: color-mix(in srgb, var(--secondary-base) 20%, var(--white) 80%);
+  --secondary-200: color-mix(in srgb, var(--secondary-base) 40%, var(--white) 60%);
+  --secondary-300: color-mix(in srgb, var(--secondary-base) 60%, var(--white) 40%);
+  --secondary-400: color-mix(in srgb, var(--secondary-base) 80%, var(--white) 20%);
+  --secondary-500: var(--secondary-base);
+  --secondary-600: color-mix(in srgb, var(--secondary-base) 80%, var(--neutral-dark) 20%);
+  --secondary-700: color-mix(in srgb, var(--secondary-base) 60%, var(--neutral-dark) 40%);
+  --secondary-800: color-mix(in srgb, var(--secondary-base) 40%, var(--neutral-dark) 60%);
+  --secondary-900: color-mix(in srgb, var(--secondary-base) 20%, var(--neutral-dark) 80%);
+  
+  /* Tertiary/Gold Color Variations */
+  --tertiary-50: color-mix(in srgb, var(--tertiary-base) 10%, var(--white) 90%);
+  --tertiary-100: color-mix(in srgb, var(--tertiary-base) 20%, var(--white) 80%);
+  --tertiary-200: color-mix(in srgb, var(--tertiary-base) 40%, var(--white) 60%);
+  --tertiary-300: color-mix(in srgb, var(--tertiary-base) 60%, var(--white) 40%);
+  --tertiary-400: color-mix(in srgb, var(--tertiary-base) 80%, var(--white) 20%);
+  --tertiary-500: var(--tertiary-base);
+  --tertiary-600: color-mix(in srgb, var(--tertiary-base) 80%, var(--neutral-dark) 20%);
+  --tertiary-700: color-mix(in srgb, var(--tertiary-base) 60%, var(--neutral-dark) 40%);
+  --tertiary-800: color-mix(in srgb, var(--tertiary-base) 40%, var(--neutral-dark) 60%);
+  --tertiary-900: color-mix(in srgb, var(--tertiary-base) 20%, var(--neutral-dark) 80%);
+  
+  /* Semantic Colors */
+  --text-primary: var(--neutral-dark);
+  --text-secondary: var(--neutral-medium);
+  --text-light: var(--white);
+  --text-accent: var(--primary-600);
+  
+  --bg-primary: var(--white);
+  --bg-secondary: var(--neutral-light);
+  --bg-accent: var(--primary-50);
+  --bg-dark: var(--primary-800);
+  
+  --border-light: var(--primary-200);
+  --border-medium: var(--primary-400);
+  --border-dark: var(--primary-600);
+  
+  /* Button Colors */
+  --btn-primary-bg: var(--primary-500);
+  --btn-primary-hover: var(--primary-600);
+  --btn-primary-text: var(--white);
+  
+  --btn-secondary-bg: transparent;
+  --btn-secondary-hover: var(--primary-50);
+  --btn-secondary-text: var(--primary-600);
+  --btn-secondary-border: var(--primary-400);
+  
+  /* Link Colors */
+  --link-color: var(--primary-600);
+  --link-hover: var(--primary-700);
+  --link-visited: var(--primary-800);
+  
+  /* Navigation Colors */
+  --nav-bg: var(--white);
+  --nav-text: var(--text-primary);
+  --nav-active: var(--primary-600);
+  --nav-hover: var(--primary-100);
+  
+  /* Card/Section Colors */
+  --card-bg: var(--white);
+  --card-border: var(--border-light);
+  --card-shadow: color-mix(in srgb, var(--primary-900) 10%, transparent 90%);
+  
+  /* Status Colors */
+  --success: #2e7d32;
+  --warning: #f57c00;
+  --error: #d32f2f;
+  --info: var(--primary-500);
+}
+
+/* Alternative color schemes for easy switching */
+/* Uncomment one of these sections to use an alternative palette */
+
+/* Classic Masonic Blue and Gold
+:root {
+  --primary-base: #003f7f;
+  --secondary-base: #ffd700;
+  --tertiary-base: #8b0000;
+}
+*/
+
+/* Rich Purple and Gold
+:root {
+  --primary-base: #4a148c;
+  --secondary-base: #ffc107;
+  --tertiary-base: #1565c0;
+}
+*/
+
+/* Traditional Navy and Crimson
+:root {
+  --primary-base: #0f1419;
+  --secondary-base: #dc143c;
+  --tertiary-base: #ffd700;
+}
+*/

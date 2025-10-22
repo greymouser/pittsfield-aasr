@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <style>
+      .cls-1 { fill: #1a237e; }
+      .cls-2 { fill: #ffd700; }
+    </style>
+  </defs>
+  
+  <!-- Three figures representing brotherhood -->
+  <g transform="translate(20,30)">
+    <!-- First figure -->
+    <circle cx="0" cy="0" r="8" class="cls-1"/>
+    <rect x="-6" y="8" width="12" height="20" class="cls-1"/>
+    <rect x="-4" y="30" width="3" height="15" class="cls-1"/>
+    <rect x="1" y="30" width="3" height="15" class="cls-1"/>
+    <!-- Arms reaching out -->
+    <rect x="6" y="12" width="8" height="3" class="cls-1"/>
+  </g>
+  
+  <g transform="translate(50,25)">
+    <!-- Second figure (slightly taller, representing leadership) -->
+    <circle cx="0" cy="0" r="9" class="cls-1"/>
+    <rect x="-7" y="9" width="14" height="22" class="cls-1"/>
+    <rect x="-4" y="32" width="3" height="18" class="cls-1"/>
+    <rect x="1" y="32" width="3" height="18" class="cls-1"/>
+    <!-- Arms reaching to both sides -->
+    <rect x="-14" y="15" width="8" height="3" class="cls-1"/>
+    <rect x="6" y="15" width="8" height="3" class="cls-1"/>
+    <!-- Crown or symbol of leadership -->
+    <polygon points="-3,-5 0,-10 3,-5" class="cls-2"/>
+  </g>
+  
+  <g transform="translate(80,30)">
+    <!-- Third figure -->
+    <circle cx="0" cy="0" r="8" class="cls-1"/>
+    <rect x="-6" y="8" width="12" height="20" class="cls-1"/>
+    <rect x="-4" y="30" width="3" height="15" class="cls-1"/>
+    <rect x="1" y="30" width="3" height="15" class="cls-1"/>
+    <!-- Arms reaching out -->
+    <rect x="-14" y="12" width="8" height="3" class="cls-1"/>
+  </g>
+  
+  <!-- Connecting bonds (symbolic chains or handshakes) -->
+  <ellipse cx="35" cy="42" rx="8" ry="3" class="cls-2" transform="rotate(20 35 42)"/>
+  <ellipse cx="65" cy="42" rx="8" ry="3" class="cls-2" transform="rotate(-20 65 42)"/>
+  
+  <!-- Base platform -->
+  <rect x="10" y="80" width="80" height="4" class="cls-1"/>
+  
+  <!-- Brotherhood symbol text -->
+  <text x="50" y="95" text-anchor="middle" font-family="serif" font-size="8" class="cls-1">BROTHERHOOD</text>
+</svg>
